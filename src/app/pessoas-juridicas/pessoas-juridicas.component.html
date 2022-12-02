@@ -1,0 +1,50 @@
+<dx-data-grid
+  (onEditingStart)="onEditingStart($event)"
+  (onEditorPreparing)="onEditorPreparing($event)"
+  (onToolbarPreparing)="onToolbarPreparing($event)"
+  *ngIf="dxDataGridProperties"
+  [allowColumnReordering]="true"
+  [allowColumnResizing]="true"
+  [columnAutoWidth]="true"
+  [columnResizingMode]="'widget'"
+  [customizeColumns]="dxDataGridProperties.customizeColumns!"
+  [dataSource]="dxDataGridProperties.dataSource!"
+  [height]="'100%'"
+  [rowAlternationEnabled]="true"
+  [showBorders]="true"
+  [showColumnHeaders]="true"
+  [showRowLines]="true"
+  [width]="'100%'"
+>
+  <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+  <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-editing [allowAdding]="true" [allowDeleting]="true" [allowUpdating]="true" [mode]="'popup'">
+    <dxo-form [colCount]="1" [showValidationSummary]="true"></dxo-form>
+    <dxo-popup
+      [hideOnOutsideClick]="true"
+      [onContentReady]="dxDataGridProperties.editing!.popup!.onContentReady!"
+      [resizeEnabled]="true"
+      [shadingColor]="'#ffffff80'"
+      [showTitle]="true"
+      [title]="this.dxPopupTitle"
+    ></dxo-popup>
+  </dxo-editing>
+  <dxo-export [enabled]="true" [formats]="['pdf', 'xlsx']"></dxo-export>
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+  <dxo-pager
+    [showInfo]="true"
+    [showNavigationButtons]="true"
+    [showPageSizeSelector]="true"
+    [visible]="true"
+  ></dxo-pager>
+  <dxo-paging [enabled]="true" [pageSize]="20"></dxo-paging>
+  <dxo-selection [mode]="'multiple'" [selectAllMode]="'allPages'"></dxo-selection>
+  <dxo-scrolling [useNative]="true"></dxo-scrolling>
+  <dxo-search-panel
+    [highlightCaseSensitive]="false"
+    [searchVisibleColumnsOnly]="true"
+    [visible]="true"
+  ></dxo-search-panel>
+  <div *dxTemplate="let item of 'separator'" style="line-height: 36px">❙</div>
+</dx-data-grid>

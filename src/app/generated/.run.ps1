@@ -1,0 +1,1 @@
+.\bin\RavexSolution.Safe.FrontEnd.Generator.exe .\config.json

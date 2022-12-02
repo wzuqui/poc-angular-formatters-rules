@@ -1,0 +1,27 @@
+<header class="header" *ngIf="usuario">
+  <dx-toolbar>
+    <dxi-item location="before">
+      <dx-drop-down-button icon="menu" (onItemClick)="acaoMenu($event)" stylingMode="text" [showArrowIcon]="false">
+        <dxo-drop-down-options [width]="'150px'"></dxo-drop-down-options>
+        <dxi-item text="Pessoas jurídica" name="pessoas-juridicas"></dxi-item>
+        <dxi-item text="Pessoas física" name="pessoas-fisicas"></dxi-item>
+      </dx-drop-down-button>
+    </dxi-item>
+    <dxi-item location="left"> 💦 LogoEmpresa </dxi-item>
+    <dxi-item location="center"> </dxi-item>
+    <dxi-item location="after" html="&nbsp;">
+      <dx-drop-down-button *dxTemplate stylingMode="text" [showArrowIcon]="false">
+        <div *dxTemplate="let item of 'item'" class="perfil">
+          <img [src]="usuario.foto" alt="Foto" />
+          <span>{{ usuario.nome }}</span>
+        </div>
+        <div *dxTemplate="let item of 'content'" class="perfil-menu">
+          <a href="#" class="dx-link" (click)="acaoSair()">Sair</a>
+        </div>
+      </dx-drop-down-button>
+    </dxi-item>
+  </dx-toolbar>
+</header>
+<main>
+  <router-outlet *ngIf="usuario"></router-outlet>
+</main>

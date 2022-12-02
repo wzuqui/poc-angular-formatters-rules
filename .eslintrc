@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "array-callback-return": "error",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": { "constructors": "no-public" }
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "memberTypes": [
+                // static
+                "public-static-field",
+                "protected-static-field",
+                "private-static-field",
+
+                // properties
+                "public-instance-field",
+                "protected-instance-field",
+                "private-instance-field",
+
+                // constructor
+                "public-constructor",
+                "protected-constructor",
+                "private-constructor",
+
+                // methods
+                "public-instance-method",
+                "protected-instance-method",
+                "private-instance-method"
+              ],
+              "order": "alphabetically-case-insensitive"
+            }
+          }
+        ],
+        "@typescript-eslint/no-inferrable-types": [
+          "error",
+          {
+            "ignoreParameters": true,
+            "ignoreProperties": true
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "modifiers": ["const"],
+            "prefix": ["x"],
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "prefix": ["I"]
+          },
+          {
+            "selector": "function",
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "parameter",
+            "format": ["PascalCase"],
+            "prefix": ["p"]
+          },
+          // métodos:
+          {
+            "selector": "classMethod",
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "classMethod",
+            "modifiers": ["private"],
+            "format": ["camelCase"],
+            "prefix": ["_"]
+          },
+          // propriedades:
+          {
+            "selector": "classProperty",
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "classProperty",
+            "modifiers": ["private"],
+            "format": ["camelCase"],
+            "prefix": ["_"]
+          }
+        ],
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+            "allowSeparatedGroups": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ],
+  "root": true
+}

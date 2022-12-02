@@ -1,0 +1,515 @@
+[
+  {
+    "Name": "RavexSolution.Safe.Domain.Core.Entities",
+    "Members": [
+      {
+        "Properties": [
+          {
+            "Name": "CriadoDataHora",
+            "Type": "DateTime",
+            "IsNull": false,
+            "Attributes": [],
+            "AttributesType": []
+          },
+          {
+            "Name": "ModificadoDataHora",
+            "Type": "DateTime",
+            "IsNull": false,
+            "Attributes": [],
+            "AttributesType": []
+          }
+        ],
+        "Name": "ICarimboTempo",
+        "Extends": null,
+        "Implements": [],
+        "Fields": [],
+        "IsClass": false,
+        "IsInterface": true,
+        "IsRecord": false
+      },
+      {
+        "Properties": [
+          {
+            "Name": "Excluido",
+            "Type": "bool",
+            "IsNull": false,
+            "Attributes": [],
+            "AttributesType": []
+          }
+        ],
+        "Name": "IExclusaoLogica",
+        "Extends": null,
+        "Implements": [],
+        "Fields": [],
+        "IsClass": false,
+        "IsInterface": true,
+        "IsRecord": false
+      }
+    ]
+  },
+  {
+    "Name": "RavexSolution.Safe.Domain.Entities",
+    "Members": [
+      {
+        "Properties": [
+          {
+            "Name": "Id",
+            "Type": "int",
+            "IsNull": false,
+            "Attributes": [
+              "Etiqueta('Identificação')",
+              "Ordem(999)",
+              "Formulario(false, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'Identificação'"
+                ]
+              },
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "999"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "false",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "CriadoDataHora",
+            "Type": "DateTime",
+            "IsNull": false,
+            "Attributes": [
+              "Etiqueta('Criado')",
+              "Ordem(997)",
+              "Formulario(false, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'Criado'"
+                ]
+              },
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "997"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "false",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "ModificadoDataHora",
+            "Type": "DateTime",
+            "IsNull": false,
+            "Attributes": [
+              "Etiqueta('Modificado')",
+              "Ordem(997)",
+              "Formulario(false, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'Modificado'"
+                ]
+              },
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "997"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "false",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "Excluido",
+            "Type": "bool",
+            "IsNull": false,
+            "Attributes": [
+              "Visivel(false)",
+              "Formulario(false, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Visivel",
+                "IsList": false,
+                "Value": [
+                  "false"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "false",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "CriadoPorId",
+            "Type": "int",
+            "IsNull": false,
+            "Attributes": [
+              "Visivel(false)",
+              "Formulario(false, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Visivel",
+                "IsList": false,
+                "Value": [
+                  "false"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "false",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "ModificadoPorId",
+            "Type": "int",
+            "IsNull": false,
+            "Attributes": [
+              "Visivel(false)",
+              "Formulario(false, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Visivel",
+                "IsList": false,
+                "Value": [
+                  "false"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "false",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "Telefone",
+            "Type": "string",
+            "IsNull": true,
+            "Attributes": [
+              "Formulario(true, true)",
+              "Mascaras('+55 (00) 0000-0000', '+55 (00) 00000-0000')"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "true",
+                  "true"
+                ]
+              },
+              {
+                "Name": "Mascaras",
+                "IsList": true,
+                "Value": [
+                  "'+55 (00) 0000-0000'",
+                  "'+55 (00) 00000-0000'"
+                ]
+              }
+            ]
+          }
+        ],
+        "Name": "Pessoa",
+        "Extends": null,
+        "Implements": [
+          "IExclusaoLogica",
+          "ICarimboTempo"
+        ],
+        "Fields": [],
+        "IsClass": true,
+        "IsInterface": false,
+        "IsRecord": false
+      },
+      {
+        "Properties": [
+          {
+            "Name": "Nome",
+            "Type": "string",
+            "IsNull": false,
+            "Attributes": [
+              "Ordem(0)",
+              "ComprimentoMinimo(5)",
+              "ComprimentoMaximo(150)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "0"
+                ]
+              },
+              {
+                "Name": "ComprimentoMinimo",
+                "IsList": false,
+                "Value": [
+                  "5"
+                ]
+              },
+              {
+                "Name": "ComprimentoMaximo",
+                "IsList": false,
+                "Value": [
+                  "150"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "Cpf",
+            "Type": "string",
+            "IsNull": true,
+            "Attributes": [
+              "Ordem(1)",
+              "Etiqueta('CPF')",
+              "Mascara('000.000.000-00')",
+              "Formulario(true, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "1"
+                ]
+              },
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'CPF'"
+                ]
+              },
+              {
+                "Name": "Mascara",
+                "IsList": false,
+                "Value": [
+                  "'000.000.000-00'"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "true",
+                  "false"
+                ]
+              }
+            ]
+          }
+        ],
+        "Name": "PessoaFisica",
+        "Extends": "Pessoa",
+        "Implements": [],
+        "Fields": [],
+        "IsClass": true,
+        "IsInterface": false,
+        "IsRecord": false
+      },
+      {
+        "Properties": [
+          {
+            "Name": "Cnpj",
+            "Type": "string",
+            "IsNull": false,
+            "Attributes": [
+              "Etiqueta('CNPJ')",
+              "Mascara('00.000.000/0000-00')",
+              "Ordem(3)",
+              "Formulario(true, false)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'CNPJ'"
+                ]
+              },
+              {
+                "Name": "Mascara",
+                "IsList": false,
+                "Value": [
+                  "'00.000.000/0000-00'"
+                ]
+              },
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "3"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "true",
+                  "false"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "RazaoSocial",
+            "Type": "string",
+            "IsNull": false,
+            "Attributes": [
+              "Etiqueta('Razão social')",
+              "ComprimentoMinimo(5)",
+              "ComprimentoMaximo(150)",
+              "Ordem(2)",
+              "Formulario(true, true)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'Razão social'"
+                ]
+              },
+              {
+                "Name": "ComprimentoMinimo",
+                "IsList": false,
+                "Value": [
+                  "5"
+                ]
+              },
+              {
+                "Name": "ComprimentoMaximo",
+                "IsList": false,
+                "Value": [
+                  "150"
+                ]
+              },
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "2"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "true",
+                  "true"
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "NomeFantasia",
+            "Type": "string",
+            "IsNull": true,
+            "Attributes": [
+              "Etiqueta('Nome fantasia')",
+              "ComprimentoMinimo(5)",
+              "ComprimentoMaximo(150)",
+              "Ordem(1)",
+              "Formulario(true, true)"
+            ],
+            "AttributesType": [
+              {
+                "Name": "Etiqueta",
+                "IsList": false,
+                "Value": [
+                  "'Nome fantasia'"
+                ]
+              },
+              {
+                "Name": "ComprimentoMinimo",
+                "IsList": false,
+                "Value": [
+                  "5"
+                ]
+              },
+              {
+                "Name": "ComprimentoMaximo",
+                "IsList": false,
+                "Value": [
+                  "150"
+                ]
+              },
+              {
+                "Name": "Ordem",
+                "IsList": false,
+                "Value": [
+                  "1"
+                ]
+              },
+              {
+                "Name": "Formulario",
+                "IsList": true,
+                "Value": [
+                  "true",
+                  "true"
+                ]
+              }
+            ]
+          }
+        ],
+        "Name": "PessoaJuridica",
+        "Extends": "Pessoa",
+        "Implements": [],
+        "Fields": [],
+        "IsClass": true,
+        "IsInterface": false,
+        "IsRecord": false
+      }
+    ]
+  }
+]

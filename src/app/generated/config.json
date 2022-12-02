@@ -1,0 +1,16 @@
+{
+  "Configuracoes": {
+    "Metadata": "C:\\Projetos\\Bibliotecas\\Resources\\EsLintEOuPrettier\\anguar-com-prettier\\src\\app\\generated\\metadata.json",
+    "Template": "C:\\Projetos\\Bibliotecas\\Resources\\EsLintEOuPrettier\\anguar-com-prettier\\src\\app\\generated\\template.hbs",
+    "Namespaces": [
+      {
+        "Name": "RavexSolution.Safe.Domain.Core.Entities",
+        "Path": "C:\\Projetos\\Safe\\RavexSolution.Safe\\Source\\RavexSolution.Safe.Domain.Core\\Entities"
+      },
+      {
+        "Name": "RavexSolution.Safe.Domain.Entities",
+        "Path": "C:\\Projetos\\Safe\\RavexSolution.Safe\\Source\\RavexSolution.Safe.Domain\\Entities"
+      }
+    ]
+  }
+}
