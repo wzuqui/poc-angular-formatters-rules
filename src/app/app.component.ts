@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     private _httpClient: HttpClient,
     private _msalBroadcastService: MsalBroadcastService,
   ) {
-    this._route.events.subscribe(pEvento => {
+    this._route.events.subscribe((pEvento: unknown) => {
       if (pEvento instanceof NavigationEnd) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const [_, xRota] = pEvento.url.split('/');
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
   }
 
   public acaoMenuFechar(pId: string): void {
-    event?.stopPropagation();
+    console.log('acaoMenuFechar');
     const xIndice = this.abas.findIndex(p => p.id === pId);
     if (xIndice > -1) {
       this.abas.splice(xIndice, 1);
@@ -91,7 +91,7 @@ export class AppComponent implements OnInit {
               headers: { 'Content-Type': 'image/*' },
               responseType: 'arraybuffer',
             })
-            .subscribe(pData => {
+            .subscribe((pData: ArrayBuffer) => {
               const xBase64 = btoa(String.fromCharCode(...new Uint8Array(pData)));
 
               this._httpClient.get('https://graph.microsoft.com/v1.0/me').subscribe((pUser: User) => {

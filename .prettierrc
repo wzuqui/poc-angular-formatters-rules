@@ -18,5 +18,13 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
-  "vueIndentScriptAndStyle": false
+  "vueIndentScriptAndStyle": false,
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "printWidth": 80
+      }
+    }
+  ]
 }

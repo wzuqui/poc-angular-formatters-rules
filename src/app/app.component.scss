@@ -38,6 +38,10 @@
           background-color: $button-normal-bg;
         }
 
+        &:active {
+          background-color: $button-normal-text-bg-active;
+        }
+
         > a {
           align-items: center;
           display: flex;

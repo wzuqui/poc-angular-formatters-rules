@@ -23,7 +23,7 @@
         <div>{{ item.icone }}</div>
         <div *ngIf="!item.fixo">{{ item.titulo }}</div>
       </a>
-      <a (onClick)="acaoMenuFechar(item.id)" *ngIf="!item.fixo">✖</a>
+      <a (click)="acaoMenuFechar(item.id)" *ngIf="!item.fixo">✖</a>
     </div>
   </div>
   <div class="direita">
