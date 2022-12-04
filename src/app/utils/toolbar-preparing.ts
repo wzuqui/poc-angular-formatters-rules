@@ -4,7 +4,6 @@ import dxDataGrid, { ToolbarPreparingInfo } from 'devextreme/ui/data_grid';
 import { Item } from 'devextreme/ui/toolbar';
 
 export function onToolbarPreparing<TEntity>(
-  pTitulo: string,
   pEvento: EventInfo<dxDataGrid<TEntity, number>> & ToolbarPreparingInfo,
 ): void {
   const xItens = pEvento.toolbarOptions.items;
@@ -13,7 +12,7 @@ export function onToolbarPreparing<TEntity>(
   }
   const xSearchPanel = removerItem('searchPanel');
   if (xSearchPanel) {
-    xSearchPanel.location = 'before';
+    xSearchPanel.location = 'after';
   }
 
   const xAddRowButton = removerItem('addRowButton');
@@ -48,25 +47,30 @@ export function onToolbarPreparing<TEntity>(
   };
 
   pEvento.toolbarOptions.items = [
-    // before:
+    {
+      ...xAddRowButton,
+      location: 'before',
+    },
+    {
+      ...xRefreshButton,
+      location: 'before',
+    },
+    {
+      ...xColumnChooserButton,
+      location: 'before',
+    },
     {
       location: 'before',
-      text: pTitulo,
-    },
-    xSearchPanel,
-
-    // after:
-    xAddRowButton,
-    xRefreshButton,
-    {
       template: 'separator',
+    },
+    {
+      ...xExportButton,
+      location: 'before',
+    },
+    {
+      ...xSearchPanel,
       location: 'after',
     },
-    xExportButton,
-    xColumnChooserButton,
-
-    // default:
-    ...xItens,
   ] as Item[];
 
   function removerItem(pName: string): (Omit<Item, 'options'> & { options: Properties }) | undefined {

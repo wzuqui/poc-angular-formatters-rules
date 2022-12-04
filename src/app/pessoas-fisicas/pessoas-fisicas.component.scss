@@ -1,4 +1,11 @@
 :host {
   height: 100%;
   display: flex;
+  flex-direction: column;
+
+  > div.titulo {
+    font-size: x-large;
+    display: flex;
+    gap: 8px;
+  }
 }

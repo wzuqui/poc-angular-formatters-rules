@@ -1,3 +1,7 @@
+<div class="titulo">
+  <span>{{ icone }}</span>
+  <span>{{ titulo }}</span>
+</div>
 <dx-data-grid
   (onEditingStart)="onEditingStart($event)"
   (onEditorPreparing)="onEditorPreparing($event)"
@@ -19,7 +23,12 @@
   <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
   <dxo-filter-panel [visible]="true"></dxo-filter-panel>
   <dxo-filter-row [visible]="true"></dxo-filter-row>
-  <dxo-editing [allowAdding]="true" [allowDeleting]="true" [allowUpdating]="true" [mode]="'popup'">
+  <dxo-editing
+    [allowAdding]="true"
+    [allowDeleting]="true"
+    [allowUpdating]="true"
+    [mode]="'popup'"
+  >
     <dxo-form [colCount]="1" [showValidationSummary]="true"></dxo-form>
     <dxo-popup
       [hideOnOutsideClick]="true"
@@ -39,7 +48,10 @@
     [visible]="true"
   ></dxo-pager>
   <dxo-paging [enabled]="true" [pageSize]="20"></dxo-paging>
-  <dxo-selection [mode]="'multiple'" [selectAllMode]="'allPages'"></dxo-selection>
+  <dxo-selection
+    [mode]="'multiple'"
+    [selectAllMode]="'allPages'"
+  ></dxo-selection>
   <dxo-scrolling [useNative]="true"></dxo-scrolling>
   <dxo-search-panel
     [highlightCaseSensitive]="false"

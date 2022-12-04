@@ -15,6 +15,9 @@ import { onToolbarPreparing } from '../utils/toolbar-preparing';
   styleUrls: ['./pessoas-juridicas.component.scss'],
 })
 export class PessoasJuridicasComponent extends CrudGeneric<RavexSolution.Safe.Domain.Entities.PessoaFisica, number> {
+  public icone: string = '💼';
+  public titulo: string = 'Pessoa jurídica';
+
   constructor() {
     super('odata/PessoasJuridicas', RavexSolution.Safe.Domain.Entities.PessoaJuridica);
   }
@@ -56,6 +59,6 @@ export class PessoasJuridicasComponent extends CrudGeneric<RavexSolution.Safe.Do
   public onToolbarPreparing(
     pEvento: EventInfo<dxDataGrid<RavexSolution.Safe.Domain.Entities.PessoaFisica, number>> & ToolbarPreparingInfo,
   ): void {
-    onToolbarPreparing('Pessoas Jurídicas', pEvento);
+    onToolbarPreparing(pEvento);
   }
 }

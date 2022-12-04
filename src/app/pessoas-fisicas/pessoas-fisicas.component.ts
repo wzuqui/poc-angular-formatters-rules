@@ -15,6 +15,9 @@ import { onToolbarPreparing } from '../utils/toolbar-preparing';
   styleUrls: ['./pessoas-fisicas.component.scss'],
 })
 export class PessoasFisicaComponent extends CrudGeneric<RavexSolution.Safe.Domain.Entities.PessoaFisica, number> {
+  public icone: string = '👨';
+  public titulo: string = 'Pessoa física';
+
   constructor() {
     super('odata/PessoasFisicas', RavexSolution.Safe.Domain.Entities.PessoaFisica);
   }
@@ -56,6 +59,6 @@ export class PessoasFisicaComponent extends CrudGeneric<RavexSolution.Safe.Domai
   public onToolbarPreparing(
     pEvento: EventInfo<dxDataGrid<RavexSolution.Safe.Domain.Entities.PessoaFisica, number>> & ToolbarPreparingInfo,
   ): void {
-    onToolbarPreparing('Pessoas Físicas', pEvento);
+    onToolbarPreparing(pEvento);
   }
 }
