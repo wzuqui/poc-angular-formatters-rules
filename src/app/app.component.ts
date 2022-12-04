@@ -56,15 +56,11 @@ export class AppComponent implements OnInit {
   }
 
   public acaoMenuFechar(pId: string): void {
-    console.log('acaoMenuFechar');
     const xIndice = this.abas.findIndex(p => p.id === pId);
     if (xIndice > -1) {
       this.abas.splice(xIndice, 1);
-      setTimeout(() => {
-        const xAba = this.abas[xIndice - 1] ?? this.abas[0];
-        console.log(xAba);
-        this._route.navigate([xAba.id]);
-      }, 10);
+      const xAba = this.abas[xIndice] ?? this.abas[0];
+      this._route.navigate([xAba.id]);
     }
   }
 
