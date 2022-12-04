@@ -2,7 +2,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {
   MsalBroadcastService,
   MsalGuard,
@@ -13,7 +12,6 @@ import {
   MSAL_INSTANCE,
   MSAL_INTERCEPTOR_CONFIG,
 } from '@azure/msal-angular';
-
 import { DevExtremeModule } from 'devextreme-angular';
 import DxConfig from 'devextreme/core/config';
 import { loadMessages, locale } from 'devextreme/localization';

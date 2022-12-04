@@ -1,0 +1,20 @@
+@use '../node_modules/devextreme/scss/widgets/generic/colors' as * with (
+  $color: 'darkviolet'
+);
+@use '../node_modules/devextreme/scss/widgets/generic/sizes' with (
+  $size: 'default'
+);
+@use '../node_modules/devextreme/scss/widgets/generic/typography';
+@use '../node_modules/devextreme/scss/widgets/generic/icons';
+@use '../node_modules/devextreme/scss/widgets/generic/widget';
+@use '../node_modules/devextreme/scss/widgets/generic/card';
+@use '../node_modules/devextreme/scss/widgets/generic/fieldset';
+@use '../node_modules/devextreme/scss/widgets/generic/common';
+@use '../node_modules/devextreme/scss/widgets/base/resizable';
+@use '../node_modules/devextreme/scss/widgets/base/draggable';
+@use '../node_modules/devextreme/scss/widgets/base/ui';
+@use '../node_modules/devextreme/scss/widgets/generic';
+@forward '../node_modules/devextreme/scss/widgets/generic/colors';
+@forward '../node_modules/devextreme/scss/widgets/generic/button/colors';
+
+$tema-cor: $base-link-color;

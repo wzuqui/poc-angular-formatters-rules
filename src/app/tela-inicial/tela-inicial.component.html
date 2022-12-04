@@ -1,0 +1,15 @@
+<div class="logo">💦 LogoEmpresa</div>
+<dx-select-box
+  [dataSource]="menu"
+  [grouped]="true"
+  displayExpr="titulo"
+  [searchEnabled]="true"
+  placeholder="Pesquisar"
+  (onSelectionChanged)="onSelectionChanged($event)"
+>
+  <div *dxTemplate="let item of 'item'">
+    {{ item.titulo }}
+  </div>
+  <div *dxTemplate="let item of 'dropDownButton'">🔎</div>
+</dx-select-box>
+<div class="recentes">todo recentes aqui</div>

@@ -11,6 +11,8 @@
     "fisica",
     "fisicas",
     "Formulario",
+    "icone",
+    "Indice",
     "juridica",
     "juridicas",
     "Juridicas",
@@ -20,5 +22,6 @@
     "stylelint",
     "usuario",
     "Visivel"
-  ]
+  ],
+  "conventionalCommits.scopes": ["scss"]
 }

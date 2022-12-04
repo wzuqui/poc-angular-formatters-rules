@@ -1,26 +1,42 @@
 <header class="header" *ngIf="usuario">
-  <dx-toolbar>
-    <dxi-item location="before">
-      <dx-drop-down-button icon="menu" (onItemClick)="acaoMenu($event)" stylingMode="text" [showArrowIcon]="false">
-        <dxo-drop-down-options [width]="'150px'"></dxo-drop-down-options>
-        <dxi-item text="Pessoas jurídica" name="pessoas-juridicas"></dxi-item>
-        <dxi-item text="Pessoas física" name="pessoas-fisicas"></dxi-item>
-      </dx-drop-down-button>
-    </dxi-item>
-    <dxi-item location="left"> 💦 LogoEmpresa </dxi-item>
-    <dxi-item location="center"> </dxi-item>
-    <dxi-item location="after" html="&nbsp;">
-      <dx-drop-down-button *dxTemplate stylingMode="text" [showArrowIcon]="false">
-        <div *dxTemplate="let item of 'item'" class="perfil">
-          <img [src]="usuario.foto" alt="Foto" />
-          <span>{{ usuario.nome }}</span>
-        </div>
-        <div *dxTemplate="let item of 'content'" class="perfil-menu">
-          <a href="#" class="dx-link" (click)="acaoSair()">Sair</a>
-        </div>
-      </dx-drop-down-button>
-    </dxi-item>
-  </dx-toolbar>
+  <div class="esquerda">
+    <dx-drop-down-button
+      icon="menu"
+      (onItemClick)="acaoMenu($event)"
+      stylingMode="text"
+      [showArrowIcon]="false"
+    >
+      <dxo-drop-down-options [width]="'150px'"></dxo-drop-down-options>
+      <dxi-item text="Pessoas jurídica" name="pessoas-juridicas"></dxi-item>
+      <dxi-item text="Pessoas física" name="pessoas-fisicas"></dxi-item>
+    </dx-drop-down-button>
+    <span>💦 LogoEmpresa</span>
+  </div>
+  <div class="centro">
+    <div
+      *ngFor="let item of abas"
+      [routerLinkActive]="'ativo'"
+      [routerLink]="[item.id]"
+      class="aba"
+    >
+      <a [routerLink]="[item.id]">
+        <div>{{ item.icone }}</div>
+        <div *ngIf="!item.fixo">{{ item.titulo }}</div>
+      </a>
+      <a (onClick)="acaoMenuFechar(item.id)" *ngIf="!item.fixo">✖</a>
+    </div>
+  </div>
+  <div class="direita">
+    <dx-drop-down-button stylingMode="text" [showArrowIcon]="false">
+      <div *dxTemplate="let item of 'item'" class="perfil">
+        <span>{{ usuario.nome }}</span>
+        <img [src]="usuario.foto" alt="Foto" />
+      </div>
+      <div *dxTemplate="let item of 'content'" class="perfil-menu">
+        <a href="#" class="dx-link" (click)="acaoSair()">Sair</a>
+      </div>
+    </dx-drop-down-button>
+  </div>
 </header>
 <main>
   <router-outlet *ngIf="usuario"></router-outlet>

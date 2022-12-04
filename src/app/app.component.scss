@@ -1,11 +1,56 @@
+@use '../variables.scss' as *;
+
 :host {
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 8px;
+  gap: 4px;
 
   main {
     flex: 1;
+  }
+
+  > header {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+
+    > .centro {
+      flex: 1;
+      display: flex;
+      gap: 2px;
+
+      > .aba {
+        align-items: center;
+        display: flex;
+        height: 36px;
+        gap: 4px;
+        justify-content: center;
+        padding: 4px 8px;
+
+        &.ativo {
+          box-shadow: inset 0 0 1px 1px;
+        }
+
+        &:hover {
+          background-color: $button-normal-bg;
+        }
+
+        > a {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          text-decoration: none;
+        }
+
+        > a + a {
+          margin-left: 8px;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
 

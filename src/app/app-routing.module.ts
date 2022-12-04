@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MsalGuard } from '@azure/msal-angular';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const xAppRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'pessoas-fisicas',
+    redirectTo: 'tela-inicial',
     pathMatch: 'full',
+  },
+  {
+    canActivate: [MsalGuard],
+    loadChildren: () => import('./tela-inicial/tela-inicial.module').then(p => p.TelaInicialModule),
+    path: 'tela-inicial',
   },
   {
     canActivate: [MsalGuard],

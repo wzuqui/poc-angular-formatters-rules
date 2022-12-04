@@ -96,6 +96,10 @@ PoC sobre ESLint Prettier TSLint para frontend, com objetivo de tirar as dúvida
 > - **Prettier** formata CSS mas não consegue fazer regras para isso uso o StyleLint.
 > - **EditorConfig** não é concorrente dos outros
 
+### Suporte a IntelliSense
+
+Sobre esse assunto encontrei um extensão que consegue fazer, seque [link](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss)
+
 # Conclusão:
 
 Prettier e ESLint trabalham juntos, existe [conflitos](https://prettier.io/docs/en/install.html#eslint-and-other-linters) veja [comparison](https://prettier.io/docs/en/comparison.html). Para trabalhar com Angular o ideal foi seguir os passos:

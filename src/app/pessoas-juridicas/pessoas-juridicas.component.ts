@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import type { EventInfo } from 'devextreme/events';
 import type dxDataGrid from 'devextreme/ui/data_grid';
 import type { Column, EditingStartEvent, EditorPreparingEvent, ToolbarPreparingInfo } from 'devextreme/ui/data_grid';

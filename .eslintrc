@@ -77,7 +77,7 @@
           {
             "selector": "variable",
             "modifiers": ["const"],
-            "prefix": ["x"],
+            "prefix": ["x", "_"],
             "format": ["PascalCase"]
           },
           {
